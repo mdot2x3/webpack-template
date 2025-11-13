@@ -2,13 +2,15 @@
 
 - Webpack template files with configuration and node modules prepared.
 - ESLint and Prettier also installed and configured.
+- Jest testing framework installed and configured.
 
 ## Getting Started
 
 1. Run `npm install` to install all dependencies.
 2. Start the development server with `npm run dev`.
-3. Open your browser and navigate to the designated address noted toward the top of the webpack serve dialog seen inside the terminal e.g. `[webpack-dev-server] Loopback: http://localhost:8080/, http://[::1]:8080/`.
+3. Open your browser and navigate to the designated address noted toward the top of the webpack serve dialog output in the terminal e.g. `[webpack-dev-server] Loopback: http://localhost:8080/, http://[::1]:8080/`.
 4. After verifying the default webpack template page loads, you can delete the test file `greeting.js` and clear the webpack test code from `style.css` and `index.js` (note: `import "./style.css";` in `index.js` is required to be kept for webpack functionality).
+5. You can also test Jest by running `npm test` to verify everything is working properly and then delete the `sum.js` and `sum.test.js` testing files.
 
 ## Available Scripts
 
@@ -31,6 +33,11 @@ Enter `npx eslint yourfile.js` on any file or directory via the command line.
 Enter `npx prettier --write .` to format the entire project, or
 `npx prettier --write app/` to format a certain directory, or
 `npx prettier --write app/components/Button.js` to format a certain file.
+
+### To run Jest tests:
+
+Enter `npm test` to run all tests via the `package.json` script, or
+`jest yourtestfile.test.js` to run a specific test file and can also pass flags and arguments on-the-fly without modifying `package.json`.
 
 ## Create a Production Build
 
