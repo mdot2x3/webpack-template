@@ -1,21 +1,49 @@
 # webpack-template
 
-Webpack template files with configuration and node modules prepared.
-ESLint and Prettier also installed and configured.
+- Webpack template files with configuration and node modules prepared.
+- ESLint and Prettier also installed and configured.
+
+## Getting Started
+
+1. Run `npm install` to install all dependencies.
+2. Start the development server with `npm run dev`.
+3. Open your browser and navigate to the designated address noted toward the top of the webpack serve dialog seen inside the terminal e.g. `[webpack-dev-server] Loopback: http://localhost:8080/, http://[::1]:8080/`.
+4. After verifying the default webpack template page loads, you can delete the test file `greeting.js` and clear the webpack test code from `style.css` and `index.js` (note: `import "./style.css";` in `index.js` is required to be kept for webpack functionality).
+
+## Available Scripts
 
 This template is set up to run webpack via scripts located in package.json.
 
-To run webpack:
-Enter 'npm run + script name' ('build', 'dev', 'deploy') -- example 'npm run dev'
+### To run webpack:
 
-'npm run build' is equivalent to running 'npx webpack',
-'npm run dev' is equivalent to running 'npx webpack serve', and
-'npm run deploy' runs 'git subtree push --prefix dist origin gh-pages' which is the final step in the webpack deployment process.
+Enter `npm run + script name` (`build`, `dev`, `deploy`) -- example `npm run dev`
 
-To run ESLint:
-Enter 'npx eslint yourfile.js' on any file or directory via the command line.
+`npm run build` is equivalent to running `npx webpack`,
+`npm run dev` is equivalent to running `npx webpack serve`, and
+`npm run deploy` runs `git subtree push --prefix dist origin gh-pages` which is the final step in the webpack deployment process.
 
-To run Prettier:
-Enter 'npx prettier --write .' to format the entire project, or
-'npx prettier --write app/' to format a certain directory, or
-'npx prettier --write app/components/Button.js' to format a certain file.
+### To run ESLint:
+
+Enter `npx eslint yourfile.js` on any file or directory via the command line.
+
+### To run Prettier:
+
+Enter `npx prettier --write .` to format the entire project, or
+`npx prettier --write app/` to format a certain directory, or
+`npx prettier --write app/components/Button.js` to format a certain file.
+
+## Create a Production Build
+
+1. After testing your application in development mode, stop the development server by pressing `Ctrl + C` in the terminal.
+2. To create a production build, run `npm run build`.
+
+## Deployment to GitHub Pages
+
+1. To create and deploy a production build to GitHub Pages, run the following code in sequence:
+
+- `git branch gh-pages`
+- ensure everything is git committed on main, then continue
+- `git checkout gh-pages && git merge main --no-edit`
+- `npm run build`
+- `git add dist -f && git commit -m "ops: deployment commit"`
+- `npm run deploy`
